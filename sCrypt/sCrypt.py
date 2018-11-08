@@ -29,14 +29,16 @@ def encrypt(string, key):
     return encrypted
 
 def decrypt(string, key):
+    decrypted = ''
     alphanum = define_alphanum()
     for char in string:
         if char in alphanum:
             pos = alphanum.find(char)
-            oldPos = (pos - key) % 72
+            oldPos = (pos - key) % 87
             oldChar = alphanum[oldPos]
             decrypted += oldChar
         elif char == ' ':
             decrypted += ' '
         else:
             decrypted += char
+    return decrypted
