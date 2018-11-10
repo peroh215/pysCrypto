@@ -1,2 +1,2 @@
-# sCrypt
-A simple but nice and ready-to-use python encryption/decryption library
+# pysCrypt
+A nice and ready-to-use python encryption/decryption library
