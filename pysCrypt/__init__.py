@@ -1,1 +1,1 @@
-import sCrypt
+import pysCrypt
