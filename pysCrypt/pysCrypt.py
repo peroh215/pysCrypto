@@ -1,16 +1,15 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
-__author__ = 'Blackman White'
+__author__ = ('Blackman White')
 
 # Imports
 import random
-import sys
 import math
 
 # Functions
 def define_alphanum():
-    alphanum = 'aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890!?@#$%&^*¨+-;âàáêèéîìíôòóûùú'
+    alphanum = 'aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZçÇ1234567890!?@#$%&^*¨§ªº+-;âàáêèéîìíôòóûùú'
     return alphanum
 
 def define_num():
@@ -26,7 +25,7 @@ def encrypt(string, key,debug=0):
                 pos = alphanum.find(char)
                 if debug == 1:
                     print('pos:',pos)
-                newPos = int((pos + key * math.pi + 1 * math.e * math.tau * 2 + 1) % 90)
+                newPos = int((pos + key * math.pi + 1 * math.e * math.tau * 2 + 1) % 95)
                 if debug == 1:
                     print(newPos)
                 newChar = alphanum[newPos]
@@ -48,7 +47,7 @@ def secure_encrypt(string, key, debug=0):
                 pos = alphanum.find(char)
                 if debug == 1:
                     print('pos:',pos)
-                newPos = int((pos + key * (math.pi + 1) * math.e * math.tau * 2 + (6 * 1024 * 2) * 524 + 6754 * 17291 * 32 + 1 * 9 * 2 * 4 * 8 * 16 + 53235231296413 * 2 + 1 * 124 + (math.e * 100) * math.pi * 2 + 5 * 420 + 69 * 912 + 7542 + math.tau * math.e * 2048 + 1928 * 666) % 90)
+                newPos = int((pos + key * (math.pi + 1) * math.e * math.tau * 2 + (6 * 1024 * 2) * 524 + 6754 * 17291 * 32 + 1 * 9 * 2 * 4 * 8 * 16 + 53235231296413 * 2 + 1 * 124 + (math.e * 100) * math.pi * 2 + 5 * 420 + 69 * 912 + 7542 + math.tau * math.e * 2048 + 1928 * 666) % 95)
                 if debug == 1:
                     print(newPos)
                 newChar = alphanum[newPos]
@@ -72,7 +71,7 @@ def simple_encrypt(string, key, debug = 0):
                 pos = alphanum.find(char)
                 if debug == 1:
                     print('pos:',pos)
-                newPos = int((pos + key) % 90)
+                newPos = int((pos + key) % 95)
                 if debug == 1:
                     print(newPos)
                 newChar = alphanum[newPos]
@@ -93,7 +92,7 @@ def decrypt(string, key, debug=0):
             pos = alphanum.find(char)
             if debug == 1:
                 print('pos:',pos)
-            oldPos = int((pos - key / math.pi + 1 / math.e / math.tau / 2 - 37) % 90)
+            oldPos = int((pos - key / math.pi + 1 / math.e / math.tau / 2 - 37) % 95)
             if debug == 1:
                 print(oldPos)
             oldChar = alphanum[oldPos]
@@ -112,7 +111,7 @@ def simple_decrypt(string, key, debug=0):
             pos = alphanum.find(char)
             if debug == 1:
                 print('pos:',pos)
-            oldPos = int((pos - key) % 90)
+            oldPos = int((pos - key) % 95)
             if debug == 1:
                 print(oldPos)
             oldChar = alphanum[oldPos]
@@ -131,7 +130,7 @@ def secure_decrypt(string, key, debug=0):
             pos = alphanum.find(char)
             if debug == 1:
                 print('pos:',pos)
-            oldPos = int((pos - key / (math.pi + 1) / math.e / math.tau / 2 - (6 / 1024 / 2) / 524 - 6754 / 17291 / 32 - 1 / 9 / 2 / 4 / 8 / 16 - 53235231296413 / 2 - 1 / 124 - (math.e / 100) / math.pi / 2 - 5 / 420 - 69 / 912 - 7542 - math.tau / math.e / 2048 - 1928 / 666 - 73) % 90)
+            oldPos = int((pos - key / (math.pi + 1) / math.e / math.tau / 2 - (6 / 1024 / 2) / 524 - 6754 / 17291 / 32 - 1 / 9 / 2 / 4 / 8 / 16 - 53235231296413 / 2 - 1 / 124 - (math.e / 100) / math.pi / 2 - 5 / 420 - 69 / 912 - 7542 - math.tau / math.e / 2048 - 1928 / 666 - 73) % 95)
             if debug == 1:
                 print(oldPos)
             oldChar = alphanum[oldPos]
@@ -141,3 +140,4 @@ def secure_decrypt(string, key, debug=0):
         else:
             decrypted += char
     return decrypted
+
