@@ -1,2 +1,2 @@
 # pysCrypt
-A nice and ready-to-use python encryption/decryption library
+A simple letter substitution encryption library
